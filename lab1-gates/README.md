@@ -151,14 +151,14 @@
 
 7. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type the following command to the Tcl console:
 
-   ```shell
+   ```tcl
    # Close the current simulation session
    close_sim
 
    # Reset the current project to its starting condition, clean out generated files
    reset_project
 
-   # Close thu current project
+   # Close the current project
    close_project
 
    # Exit Vivado
@@ -173,7 +173,7 @@
 
 De Morgan's laws are two fundamental rules in Boolean algebra that are used to simplify Boolean expressions. There are two versions of De Morgan's laws. De Morgan's law for AND: The complement of the product of two operands is equal to the sum of the complements of the operands. De Morgan's law for OR: The complement of the sum of two operands is equal to the product of the complements of the operands.
 
-1. Use De Morgan's laws and modify the following original function into a form with AND, OR, or NAND, NOR gates.
+1. Use De Morgan's laws and modify the following original function (or provide your own) into a form with AND, OR, or NAND, NOR gates.
 
    > **Help:** De Morgan's laws are defined as follows:
    >
