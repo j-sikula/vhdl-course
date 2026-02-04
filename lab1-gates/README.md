@@ -149,7 +149,7 @@
 
    <!--![Vivado-commands](images/vivado_basic-commands_labels.png)-->
 
-7. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type the following command to the Tcl console:
+7. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type some the following command(s) to the Tcl console:
 
    ```tcl
    # Close the current simulation session
