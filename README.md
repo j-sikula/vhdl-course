@@ -9,9 +9,9 @@
 -->
 
 * [Labs](#labs)
-* [List of VHDL examples](#list-of-vhdl-examples)
 * [Installation](#installation)
 * [Components and tools](#components-and-tools)
+* [List of VHDL examples](#list-of-vhdl-examples)
 * [References](#references)
 
 This repository contains VHDL examples for the bachelor-level course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/290532) at Brno University of Technology (Czechia), using the [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board.
@@ -21,25 +21,13 @@ This repository contains VHDL examples for the bachelor-level course [*Digital E
 ## Labs
 
 1. [Introduction to VHDL](lab1-gates)
-2. [Logic circuits](lab2-logic)
+2. [Binary comparator](lab2-logic)
 3. [Seven-segment display decoder](lab3-segment)
 4. [Arithmetic-logic unit (ALU)](lab4-alu)
 5. [Binary counter](lab5-counter)
 6. [LFSR counter](lab6-lfsr)
-7. [UART Transmitter](lab7-uart)
-8. [VHDL Project](lab8-project)
-
-## List of VHDL examples
-
-* [Basic gates in VHDL](https://www.edaplayground.com/x/5L92)
-* [Binary comparator](https://www.edaplayground.com/x/5uu3)
-* [Seven-segment display](https://www.edaplayground.com/x/Vdpu)
-* [Half/Full adder](https://www.edaplayground.com/x/2Jcz)
-* [Clock enable circuit](https://www.edaplayground.com/x/5LiJ)
-* [N-bit Up/Down binary counter](https://www.edaplayground.com/x/5bgq)
-* [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A)
-* [One-minute stopwatch](https://www.edaplayground.com/x/2uKg)
-* [Traffic light controller](https://www.edaplayground.com/x/5HBi)
+7. [UART transmitter](lab7-uart)
+8. [VHDL project](lab8-project)
 
 ## Installation
 
@@ -60,15 +48,27 @@ The following hardware and software components are mainly used in the lab.
   * 24MHz 8-channel [logic analyzer](https://www.ebay.com/sch/i.html?LH_CAds=&_ex_kw=&_fpos=&_fspt=1&_mPrRngCbx=1&_nkw=24mhz%20logic%20analyzer&_sacat=&_sadis=&_sop=12&_udhi=&_udlo=): [software](https://www.saleae.com/)
   * Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
+## List of VHDL examples
+
+* [Basic gates in VHDL](https://www.edaplayground.com/x/5L92)
+* [Binary comparator](https://www.edaplayground.com/x/5uu3)
+* [Seven-segment display](https://www.edaplayground.com/x/Vdpu)
+* [Half/Full adder](https://www.edaplayground.com/x/2Jcz)
+* [Clock enable circuit](https://www.edaplayground.com/x/5LiJ)
+* [N-bit Up/Down binary counter](https://www.edaplayground.com/x/5bgq)
+* [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A)
+* [One-minute stopwatch](https://www.edaplayground.com/x/2uKg)
+* [Traffic light controller](https://www.edaplayground.com/x/5HBi)
+
 ## References
 
-1. [Digital electronics wiki](https://github.com/tomas-fryza/vhdl-labs/wiki)
+1. [Digital electronics wiki](https://github.com/tomas-fryza/vhdl-examples/wiki)
 
-2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
+2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
 
-3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
-4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/List-of-versions)
+4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-examples/wiki/List-of-versions)
 
 5. [ModelSim Installation on Ubuntu](https://gist.github.com/Razer6/cafc172b5cffae189b4ecda06cf6c64f)
 

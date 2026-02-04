@@ -62,7 +62,7 @@
       * `y_or`, `out`
       * `y_xor`, `out`
 
-2. Open the generated file `gates.vhd` located in **Design Sources** and take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/vhdl-labs/wiki/Entity), [architecture](https://github.com/tomas-fryza/vhdl-labs/wiki/Architecture), and the useful VHDL operators.
+2. Open the generated file `gates.vhd` located in **Design Sources** and take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/vhdl-examples/wiki/Entity), [architecture](https://github.com/tomas-fryza/vhdl-examples/wiki/Architecture), and the useful VHDL operators.
 
    | **Operator** | **Description** |
    | :-: | :-- |
@@ -145,14 +145,24 @@
 
 6. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
-   ![Vivado-rtl](images/vivado_rtl.png)
+   <!--![Vivado-rtl](images/vivado_rtl.png)-->
 
    <!--![Vivado-commands](images/vivado_basic-commands_labels.png)-->
 
 7. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type the following command to the Tcl console:
 
    ```shell
-   reset_sim
+   # Close the current simulation session
+   close_sim
+
+   # Reset the current project to its starting condition, clean out generated files
+   reset_project
+
+   # Close thu current project
+   close_project
+
+   # Exit Vivado
+   exit
    ```
 
    <!-- ![Reset simulation](images/screenshot_vivado_reset_simul.png)-->
@@ -212,8 +222,8 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
    TerosHDL is an open-source tool designed to streamline FPGA development by providing a unified workflow for simulation and synthesis using VHDL. GHDL is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
 
-   * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
-   * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
+   * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
+   * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
 
 3. Choose one of the distributive laws and verify, using VHDL, that both sides of the equation represent the same logic function.
 
