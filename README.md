@@ -1,4 +1,4 @@
-# VHDL course
+# VHDL Examples
 
 <!--
 ![Logo](logolink_eng.jpg)
@@ -8,28 +8,20 @@
 </p>
 -->
 
-* [Installation](#installation)
 * [Labs](#labs)
 * [List of VHDL examples](#list-of-vhdl-examples)
+* [Installation](#installation)
 * [Components and tools](#components-and-tools)
 * [References](#references)
 
-The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/290532) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used in the course.
+This repository contains VHDL examples for the bachelor-level course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/290532) at Brno University of Technology (Czechia), using the [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board.
 
-![vhdl_course](docs/old_labs/_07-display_driver/images/nexys-lab.jpg)
-
-## Installation
-
-* Online [EDA Playground](https://edaplayground.com/) simulator (0 B)
-* [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
-* [Vivado Design Suite 2025.2](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions) (tens of GBs)
-* [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
-* [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html) (several GBs)
+<!--![vhdl_course](docs/old_labs/_07-display_driver/images/nexys-lab.jpg)-->
 
 ## Labs
 
-1. [Introduction to VHDL and Vivado](lab1-gates)
-2. [Combinational logic circuits](lab2-logic)
+1. [Introduction to VHDL](lab1-gates)
+2. [Logic circuits](lab2-logic)
 3. [Seven-segment display decoder](lab3-segment)
 4. [Arithmetic-logic unit (ALU)](lab4-alu)
 5. [Binary counter](lab5-counter)
@@ -49,11 +41,19 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 * [One-minute stopwatch](https://www.edaplayground.com/x/2uKg)
 * [Traffic light controller](https://www.edaplayground.com/x/5HBi)
 
+## Installation
+
+* Online [EDA Playground](https://edaplayground.com/) simulator (0 B)
+* [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
+* [Vivado Design Suite 2025.2](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions) (tens of GBs)
+* [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
+* [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html) (several GBs)
+
 ## Components and tools
 
 The following hardware and software components are mainly used in the lab.
 
-* Boards:
+* Board:
   * [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](docs/nexys-a7-sch.pdf), XC7A50T-1CSG324C [FPGA](docs/ds180_7Series_Overview.pdf), [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
 
 * Analyzers:
@@ -62,13 +62,13 @@ The following hardware and software components are mainly used in the lab.
 
 ## References
 
-1. [Digital electronics wiki](https://github.com/tomas-fryza/vhdl-course/wiki)
+1. [Digital electronics wiki](https://github.com/tomas-fryza/vhdl-labs/wiki)
 
-2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
+2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
 
-3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
-4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions)
+4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-labs/wiki/List-of-versions)
 
 5. [ModelSim Installation on Ubuntu](https://gist.github.com/Razer6/cafc172b5cffae189b4ecda06cf6c64f)
 
