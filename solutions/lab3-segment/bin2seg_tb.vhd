@@ -4,32 +4,29 @@ library ieee;
 
 -------------------------------------------------
 
-entity tb_bin2seg is
+entity bin2seg_tb is
 -- Entity of testbench is always empty
-end entity tb_bin2seg;
+end entity bin2seg_tb;
 
 -------------------------------------------------
 
-architecture testbench of tb_bin2seg is
+architecture testbench of bin2seg_tb is
     component bin2seg is
         port (
-            clear : in    std_logic;
-            bin   : in    std_logic_vector(3 downto 0);
-            seg   : out   std_logic_vector(6 downto 0)
+            bin : in  std_logic_vector(3 downto 0);
+            seg : out std_logic_vector(6 downto 0)
         );
     end component;
 
     -- Testbench local signals
-    signal sig_clear : std_logic;
-    signal sig_bin   : std_logic_vector(3 downto 0);
-    signal sig_seg   : std_logic_vector(6 downto 0);
+    signal sig_bin : std_logic_vector(3 downto 0);
+    signal sig_seg : std_logic_vector(6 downto 0);
 begin
 
     dut : component bin2seg
         port map (
-            clear => sig_clear,
-            bin   => sig_bin,
-            seg   => sig_seg
+            bin => sig_bin,
+            seg => sig_seg
         );
 
     -----------------------------------------------
@@ -39,17 +36,6 @@ begin
     begin
 
         report "Stimulus process started";
-
-        -- Normal operation
-        sig_clear <= '0';
-        sig_bin   <= "0111";
-        wait for 50 ns;
-
-        -- Clear display
-        sig_clear <= '1';
-        wait for 115 ns;
-        sig_clear <= '0';
-        wait for 25 ns;
 
         -- Loop for all hex values
         for i in 0 to 15 loop

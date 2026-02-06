@@ -1,17 +1,18 @@
 -------------------------------------------------
---! @brief One-digit 7-segment display decoder
---! @version 1.3
---! @copyright (c) 2018-2025 Tomas Fryza, MIT license
+--! @brief Binary to 7-segment decoder (common anode, 1 digit)
+--! @version 1.4
+--! @copyright (c) 2018-2026 Tomas Fryza, MIT license
 --!
---! This VHDL file represents a binary-to-seven-segment decoder
---! for a one-digit display with Common Anode configuration
---! (active-low). The decoder defines 16 hexadecimal symbols:
---! `0, 1, ..., 9, A, b, C, d, E, F`. All segments are turned
---! off when `clear` signal is high. Note that Decimal Point
---! functionality is not implemented.
+--! This design decodes a 4-bit binary input into control
+--! signals for a 7-segment common-anode display. It
+--! supports hexadecimal characters:
 --!
---! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
---! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
+--!   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F
+--
+-- Notes:
+-- - Common anode: segment ON = 0, OFF = 1
+-- - No decimal point is implemented
+-- - Purely combinational (no clock)
 -------------------------------------------------
 
 library ieee;
@@ -21,9 +22,8 @@ library ieee;
 
 entity bin2seg is
     port (
-        clear : in    std_logic;                    --! Clear the display
-        bin   : in    std_logic_vector(3 downto 0); --! Binary representation of one hexadecimal symbol
-        seg   : out   std_logic_vector(6 downto 0)  --! Seven active-low segments from A to G
+        bin : in  std_logic_vector(3 downto 0);  --! 4-bit input
+        seg : out std_logic_vector(6 downto 0)   --! {a,b,c,d,e,f,g} active-low
     );
 end entity bin2seg;
 
@@ -34,76 +34,66 @@ begin
 
     --! This combinational process decodes binary input
     --! `bin` into 7-segment display output `seg` for a
-    --! Common Anode configuration. When either `bin` or
-    --! `clear` changes, the process is triggered. Each
-    --! bit in `seg` represents a segment from A to G.
-    --! The display is cleared if `clear` is set to 1.
-    p_7seg_decoder : process (bin, clear) is
+    --! Common Anode configuration. When `bin` changes,
+    --! the process is triggered.
+    p_7seg_decoder : process (bin) is
     begin
+        case bin is
+            when x"0" =>
+                seg <= "0000001";
 
-        if (clear = '1') then
-            seg <= "1111111";  -- Clear the display
-        else
+            when x"1" =>
+                seg <= "1001111";
 
-            case bin is
+            -- WRITE YOUR CODE HERE
+            -- 2, 3, 4, 5, 6
 
-                when x"0" =>
-                    seg <= "0000001";
+            when x"2" =>
+                seg <= "0010010";
 
-                when x"1" =>
-                    seg <= "1001111";
+            when x"3" =>
+                seg <= "0000110";
 
-                -- WRITE YOUR CODE HERE
-                -- 2, 3, 4, 5, 6
+            when x"4" =>
+                seg <= "1001100";
 
-                when x"2" =>
-                    seg <= "0010010";
+            when x"5" =>
+                seg <= "0100100";
 
-                when x"3" =>
-                    seg <= "0000110";
+            when x"6" =>
+                seg <= "0100000";
 
-                when x"4" =>
-                    seg <= "1001100";
+            when x"7" =>
+                seg <= "0001111";
 
-                when x"5" =>
-                    seg <= "0100100";
+            when x"8" =>
+                seg <= "0000000";
 
-                when x"6" =>
-                    seg <= "0100000";
+            -- WRITE YOUR CODE HERE
+            -- 9, A, b, C, d
 
-                when x"7" =>
-                    seg <= "0001111";
+            when x"9" =>
+                seg <= "0000100";
 
-                when x"8" =>
-                    seg <= "0000000";
+            when x"A" =>
+                seg <= "0001000";
 
-                -- WRITE YOUR CODE HERE
-                -- 9, A, b, C, d
+            when x"b" =>
+                seg <= "1100000";
 
-                when x"9" =>
-                    seg <= "0000100";
+            when x"C" =>
+                seg <= "0110001";
 
-                when x"A" =>
-                    seg <= "0001000";
+            when x"d" =>
+                seg <= "1000010";
 
-                when x"b" =>
-                    seg <= "1100000";
+            when x"E" =>
+                seg <= "0110000";
 
-                when x"C" =>
-                    seg <= "0110001";
+            when others =>
+                seg <= "0111000";
 
-                when x"d" =>
-                    seg <= "1000010";
-
-                when x"E" =>
-                    seg <= "0110000";
-
-                when others =>
-                    seg <= "0111000";
-
-            end case;
-
-        end if;
+        end case;
 
     end process p_7seg_decoder;
 
