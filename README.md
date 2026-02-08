@@ -16,8 +16,6 @@
 
 This repository contains VHDL examples for the bachelor-level course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/290532) at Brno University of Technology (Czechia), using the [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board.
 
-<!--![vhdl_course](docs/old_labs/_07-display_driver/images/nexys-lab.jpg)-->
-
 ## Labs
 
 1. [Basic logic gates](lab1-gates)
@@ -28,6 +26,8 @@ This repository contains VHDL examples for the bachelor-level course [*Digital E
 6. [LFSR counter](lab6-lfsr)
 7. [UART transmitter](lab7-uart)
 8. [VHDL project](lab8-project)
+
+<![vhdl_course](examples/_archive/_07-display_driver/images/nexys-lab.jpg)>
 
 ## Installation
 
