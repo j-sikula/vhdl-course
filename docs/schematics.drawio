@@ -5512,32 +5512,32 @@
         <mxCell id="ScaUl5syvgi-ZWHGhiNF-52" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=8;fillOpacity=100;spacing=0;spacingLeft=0;connectable=0;" value="&lt;div&gt;Tomas Fryza&lt;/div&gt;&lt;div&gt;Lab3 - Driver for two 7-segment digits&lt;/div&gt;&lt;div&gt;2026-02-07&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="280" x="720" y="-500" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-1" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;" value="AND" vertex="1">
-          <mxGeometry height="60" width="100" x="520" y="-960" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-1" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;aspect=fixed;" value="AND" vertex="1">
+          <mxGeometry height="50" width="83.33" x="520" y="-960" as="geometry" />
         </mxCell>
         <mxCell id="SsjYkef6ENkVWAR9sNxZ-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;aspect=fixed;" value="XOR" vertex="1">
-          <mxGeometry height="60" width="100" x="800" y="-960" as="geometry" />
+          <mxGeometry height="50" width="83.33" x="760" y="-960" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;negating=1;negSize=0.15;" value="XNOR" vertex="1">
-          <mxGeometry height="60" width="100" x="800" y="-870" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;negating=1;negSize=0.15;aspect=fixed;" value="XNOR" vertex="1">
+          <mxGeometry height="50" width="83.33" x="760" y="-870" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;" value="NOR" vertex="1">
-          <mxGeometry height="60" width="100" x="660" y="-870" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;aspect=fixed;" value="NOR" vertex="1">
+          <mxGeometry height="50" width="83.33" x="640" y="-870" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-5" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;" value="OR" vertex="1">
-          <mxGeometry height="60" width="100" x="660" y="-960" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-5" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;aspect=fixed;" value="OR" vertex="1">
+          <mxGeometry height="50" width="83.33" x="640" y="-960" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-6" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;negating=1;negSize=0.15;" value="NAND" vertex="1">
-          <mxGeometry height="60" width="100" x="520" y="-870" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-6" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;negating=1;negSize=0.15;aspect=fixed;" value="NAND" vertex="1">
+          <mxGeometry height="50" width="83.33" x="520" y="-870" as="geometry" />
         </mxCell>
-        <mxCell id="SsjYkef6ENkVWAR9sNxZ-7" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverter_2" value="NOT" vertex="1">
-          <mxGeometry height="60" width="100" x="940" y="-870" as="geometry" />
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-7" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverter_2;aspect=fixed;" value="NOT" vertex="1">
+          <mxGeometry height="50" width="83.33" x="880" y="-870" as="geometry" />
         </mxCell>
         <mxCell id="3R6eKoPLreCoNcEhH8GS-1" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=8;fillOpacity=100;spacing=0;spacingLeft=0;connectable=0;labelPosition=center;verticalLabelPosition=middle;" value="&lt;div&gt;Tomas Fryza&lt;/div&gt;&lt;div&gt;Lab1 - Logic gate symbols&lt;/div&gt;&lt;div&gt;2026-02-10&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="170" x="400" y="-1000" as="geometry" />
         </mxCell>
-        <mxCell id="3R6eKoPLreCoNcEhH8GS-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.buffer2;" value="Buffer" vertex="1">
-          <mxGeometry height="60" width="100" x="940" y="-960" as="geometry" />
+        <mxCell id="3R6eKoPLreCoNcEhH8GS-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.buffer2;aspect=fixed;" value="Buffer" vertex="1">
+          <mxGeometry height="50" width="83.33" x="880" y="-960" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
