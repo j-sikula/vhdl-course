@@ -1,29 +1,28 @@
 # Lab 2: Binary comparator
 
-* [Pre-Lab preparation](#preparation)
 * [Part 1: Logic function minimization](#part1)
 * [Part 2: Binary comparator in VHDL language](#part2)
 * [Part 3: Assertion statements in VHDL testbench](#part3)
-* [Challenges](#challenges)
+* [Optional tasks](#tasks)
 * [References](#references)
 <!--* [Part 4: Implementing to FPGA](#part4)-->
 
-### Learning objectives
+### Objectives
+
+After completing this laboratory, students will be able to:
 
 * Use truth table, K-map, SoP/PoS forms of logic functions
 * Minimize logic functions
 * Understand signal assignments in VHDL
 * Use VHDL assertion statements for testing
 
-<a name="preparation"></a>
-
-## Pre-Lab preparation
+### Background
 
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs.
 
 ![Binary comparator](images/two-bit-comparator.png)
 
-1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions.
+Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions.
 
    | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **A is greater than B** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -238,9 +237,9 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
       ![design flow](images/FPGA-design-flow.png)
 -->
 
-<a name="challenges"></a>
+<a name="tasks"></a>
 
-## Challenges
+## Optional tasks
 
 1. Use conditional signal assignments `when/else` and extend your design to 4-bit comparator.
 

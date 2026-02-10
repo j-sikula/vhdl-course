@@ -1,31 +1,28 @@
 # Lab 3: Seven-segment display decoder
 
-* [Pre-Lab preparation](#preparation)
 * [Part 1: VHDL code for seven-segment display decoder](#part1)
 * [Part 2: Structural modeling, instantiation](#part2)
 * [Part 3: Top level VHDL code](#part3)
 * [Part 4: Implement to FPGA](#part4)
-* [Challenges](#challenges)
+* [Optional tasks](#tasks)
 * [References](#references)
 
-### Learning objectives
+### Objectives
+
+After completing this laboratory, students will be able to:
 
 * Use 7-segment display
 * Use VHDL processes
 * Understand the structural modeling and instantiation in VHDL
 * Implement design to real hardware
 
-<a name="preparation"></a>
+### Background
 
-## Pre-Lab preparation
-
-The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
-v
-1. See [schematic](https://github.com/tomas-fryza/vhdl-examples/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays and push-buttons. What is the difference between NPN and PNP type of BJT (Bipolar Junction Transistor).
+The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display). See [schematic](https://github.com/tomas-fryza/vhdl-examples/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays and push-buttons. What is the difference between NPN and PNP type of BJT (Bipolar Junction Transistor).
 
    ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
 
-2. Complete the decoder truth table for **common anode** (active low) 7-segment display.
+Complete the decoder truth table for **common anode** (active low) 7-segment display.
 
    ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
@@ -314,9 +311,9 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 5. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
-<a name="challenges"></a>
+<a name="tasks"></a>
 
-## Challenges
+## Optional tasks
 
 1. Extend the functionality of one-digit 7-segment decoder to drive a two-digit display. Upon pressing a button, the display will switch between the two digits.v
 

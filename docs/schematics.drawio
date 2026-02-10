@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0" version="29.3.8">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0" version="29.3.8">
   <diagram id="j7nF-TVUxBw4xUQn4cIl" name="Page-1">
-    <mxGraphModel dx="1497" dy="1639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2015" dy="1879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5511,6 +5511,27 @@
         </mxCell>
         <mxCell id="ScaUl5syvgi-ZWHGhiNF-52" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=8;fillOpacity=100;spacing=0;spacingLeft=0;connectable=0;" value="&lt;div&gt;Tomas Fryza&lt;/div&gt;&lt;div&gt;Lab3 - Driver for two 7-segment digits&lt;/div&gt;&lt;div&gt;2026-02-07&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="280" x="720" y="-500" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-1" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;" value="AND" vertex="1">
+          <mxGeometry height="60" width="100" x="360" y="-970" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;aspect=fixed;" value="XOR" vertex="1">
+          <mxGeometry height="60" width="100" x="640" y="-970" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;negating=1;negSize=0.15;" value="XNOR" vertex="1">
+          <mxGeometry height="60" width="100" x="640" y="-880" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;" value="NOR" vertex="1">
+          <mxGeometry height="60" width="100" x="500" y="-880" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-5" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;" value="OR" vertex="1">
+          <mxGeometry height="60" width="100" x="500" y="-970" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-6" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;negating=1;negSize=0.15;" value="NAND" vertex="1">
+          <mxGeometry height="60" width="100" x="360" y="-880" as="geometry" />
+        </mxCell>
+        <mxCell id="SsjYkef6ENkVWAR9sNxZ-7" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverter_2" value="NOT" vertex="1">
+          <mxGeometry height="60" width="100" x="780" y="-970" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

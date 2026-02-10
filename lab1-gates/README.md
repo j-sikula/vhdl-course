@@ -10,27 +10,40 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-* [Pre-Lab preparation](#preparation)
 * [Part 1: VHDL and Vivado](#part1)
 * [Part 2: DeMorgans laws](#part2)
-* [Challenges](#challenges)
-* [Additional information](#infos)
+* [Optional tasks](#tasks)
 * [References](#references)
 
-### Learning objectives
+### Objectives
+
+After completing this laboratory, students will be able to:
 
 * Describe the main parts of a VHDL file
 * Use Vivado development tool
 * Be able to create a simulation testbench and run the simulation
 * Use De Morgan's and Distributive laws
 
-<a name="preparation"></a>
+### Background
 
-## Pre-Lab preparation
+Digital systems are built from **logic gates**, which implement Boolean functions. In this laboratory, three fundamental gates are implemented:
 
-1. Remind yourself the AND, OR, XOR gates.
+   * **AND**: Output is `1` only when both inputs are `1`.
+   * **OR**: Output is `1` when at least one input is `1`.
+   * **XOR**: Output is `1` when inputs are different.
 
-2. Optional: If you want to use online [EDA Playground](https://www.edaplayground.com) tool, you will need Google account, Facebook account, or register your account on EDA Playground.
+   ![basic-logic-gates](images/gates.png)
+
+[VHDL (VHSIC Hardware Description Language)](https://ieeexplore.ieee.org/document/8938196) is a programming language used to describe the behavior and structure of digital circuits. The acronym VHSIC (Very High Speed Integrated Circuits) in the language's name comes from the U.S. government program that funded early work on the standard. VHDL is a formal notation intended for use in all phases of the creation of electronic systems. Since it is both machine and human readable, it supports the design, development, verification, synthesis, and testing of hardware designs; the communication of hardware design data; and the maintenance, modification, and procurement of hardware.
+
+ > **Note:** IEEE standards for VHDL language:
+ > * IEEE Std 1076-1987
+ > * IEEE Std 1076-1993
+ > * IEEE Std 1076-2002
+ > * IEEE Std 1076-2008
+ > * IEEE Std 1076-2019
+
+[Vivado Design Suite](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html) is a comprehensive design environment developed by AMD (formerly Xilinx) for the design, analysis, and implementation of programmable logic devices, such as FPGAs (Field-Programmable Gate Arrays) and SoCs (System on Chips). It provides a set of tools and features for digital design, synthesis, simulation, and implementation of electronic systems.
 
 <a name="part1"></a>
 
@@ -65,6 +78,22 @@
    | `xor` | Exclusive OR |
    | `xnor` | Exclusive OR with negated output |
    | `-- comment` | Comments |
+
+   **Help:** The `std_logic` data type provides several values.
+
+   ```vhdl
+   type std_logic is (
+       'U',  -- Uninitialized state used as a default value
+       'X',  -- Forcing unknown
+       '0',  -- Forcing zero. Transistor driven to GND
+       '1',  -- Forcing one. Transistor driven to VCC
+       'Z',  -- High impedance. 3-state buffer outputs
+       'W',  -- Weak unknown. Bus terminators
+       'L',  -- Weak zero. Pull down resistors
+       'H',  -- Weak one. Pull up resistors
+       '-'   -- Don't care state used for synthesis and advanced modeling
+   );
+   ```
 
 3. Complete the `architecture` sections so that it implements:
 
@@ -223,9 +252,9 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 3. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
-<a name="challenges"></a>
+<a name="tasks"></a>
 
-## Challenges
+## Optional tasks
 
 1. Choose one of the distributive laws and verify, using VHDL, that both sides of the equation represent the same logic function.
 
@@ -250,7 +279,7 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
    \end{align*}
    -->
 
-2. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/) to simulate logic circuits.
+2. If you want to use online [EDA Playground](https://www.edaplayground.com) tool, you will need Google account, Facebook account, or register your account on EDA Playground. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/) to simulate logic circuits.
 
 3. In addition to the professional Vivado tool, which requires significant local disk storage, other simulation tools are available, including TerosHDL and ghdl.
 
@@ -258,37 +287,6 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
    * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
    * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
-
-<a name="infos"></a>
-
-## Additional information
-
-[VHDL (VHSIC Hardware Description Language)](https://ieeexplore.ieee.org/document/8938196) is a programming language used to describe the behavior and structure of digital circuits. The acronym VHSIC (Very High Speed Integrated Circuits) in the language's name comes from the U.S. government program that funded early work on the standard. VHDL is a formal notation intended for use in all phases of the creation of electronic systems. Since it is both machine and human readable, it supports the design, development, verification, synthesis, and testing of hardware designs; the communication of hardware design data; and the maintenance, modification, and procurement of hardware.
-
- > **Note:** IEEE standards for VHDL language:
- > * IEEE Std 1076-1987
- > * IEEE Std 1076-1993
- > * IEEE Std 1076-2002
- > * IEEE Std 1076-2008
- > * IEEE Std 1076-2019
-
-[Vivado Design Suite](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html) is a comprehensive design environment developed by AMD (formerly Xilinx) for the design, analysis, and implementation of programmable logic devices, such as FPGAs (Field-Programmable Gate Arrays) and SoCs (System on Chips). It provides a set of tools and features for digital design, synthesis, simulation, and implementation of electronic systems.
-
-**Help:** The `std_logic` data type provides several values.
-
-```vhdl
-type std_logic is (
-    'U',  -- Uninitialized state used as a default value
-    'X',  -- Forcing unknown
-    '0',  -- Forcing zero. Transistor driven to GND
-    '1',  -- Forcing one. Transistor driven to VCC
-    'Z',  -- High impedance. 3-state buffer outputs
-    'W',  -- Weak unknown. Bus terminators
-    'L',  -- Weak zero. Pull down resistors
-    'H',  -- Weak one. Pull up resistors
-    '-'   -- Don't care state used for synthesis and advanced modeling
-);
-```
 
 <a name="references"></a>
 
