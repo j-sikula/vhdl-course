@@ -22,7 +22,11 @@ After completing this laboratory, students will be able to:
 
 ![Binary comparator](images/two-bit-comparator.png)
 
-Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions.
+Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions but only **one output** should be HIGH at a time:
+
+   - `b_gt`: Output is `1` when `b > a`
+   - `b_a_eq`: Output is `1` when `b == a`
+   - `a_gt`: Output is `1` when `b < a`
 
    | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **A is greater than B** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
