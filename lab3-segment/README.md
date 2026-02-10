@@ -22,7 +22,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
    ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
 
-Complete the decoder truth table for **common anode** (active low) 7-segment display.
+The Binary to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals which can be displayed on 7-segment display. A display consists of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`. Complete the decoder truth table for **common anode** (active low) 7-segment display.
 
    ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
@@ -55,8 +55,6 @@ Complete the decoder truth table for **common anode** (active low) 7-segment dis
 <a name="part1"></a>
 
 ## Part 1: VHDL code for seven-segment display decoder
-
-The Binary to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals which can be displayed on 7-segment display. A display consists of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
 
 1. Run Vivado and create a new project:
 
