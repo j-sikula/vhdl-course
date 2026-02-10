@@ -11,7 +11,7 @@
 -->
 
 * [Part 1: VHDL and Vivado](#part1)
-* [Part 2: DeMorgans laws](#part2)
+* [Part 2: De Morgan's laws](#part2)
 * [Optional tasks](#tasks)
 * [References](#references)
 
@@ -21,7 +21,9 @@ After completing this laboratory, students will be able to:
 
 * Describe the main parts of a VHDL file
 * Use Vivado development tool
-* Be able to create a simulation testbench and run the simulation
+* Implement basic combinational logic using VHDL operators
+* Create a simple VHDL testbench
+* Simulate a design and analyze waveforms
 * Use De Morgan's and Distributive laws
 
 ### Background
@@ -33,6 +35,8 @@ Digital systems are built from **logic gates**, which implement Boolean function
    * **XOR**: Output is `1` when inputs are different.
 
    ![basic-logic-gates](images/gates.png)
+
+**Hardware Description Languages** (HDLs) are used to model, design, and simulate digital hardware systems by describing their structure and behavior. VHDL and Verilog are the two most widely used HDLs, both allowing engineers to create designs for digital circuits such as processors, controllers, and FPGA implementations. **VHDL** is strongly typed and more verbose, making it popular in academic, aerospace, and safety-critical applications, while **Verilog** has a C-like syntax and is often considered easier to learn and more concise. Both languages support parallel hardware behavior and timing, which distinguishes them from traditional software programming languages. Designs written in VHDL or Verilog can be simulated for verification and synthesized into real hardware.
 
 [VHDL (VHSIC Hardware Description Language)](https://ieeexplore.ieee.org/document/8938196) is a programming language used to describe the behavior and structure of digital circuits. The acronym VHSIC (Very High Speed Integrated Circuits) in the language's name comes from the U.S. government program that funded early work on the standard. VHDL is a formal notation intended for use in all phases of the creation of electronic systems. Since it is both machine and human readable, it supports the design, development, verification, synthesis, and testing of hardware designs; the communication of hardware design data; and the maintenance, modification, and procurement of hardware.
 
@@ -209,7 +213,7 @@ Digital systems are built from **logic gates**, which implement Boolean function
 
 <a name="part2"></a>
 
-## Part 2: DeMorgans laws
+## Part 2: De Morgan's laws
 
 De Morgan's laws are two fundamental rules in Boolean algebra that are used to simplify Boolean expressions. There are two versions of De Morgan's laws. De Morgan's law for AND: The complement of the product of two operands is equal to the sum of the complements of the operands. De Morgan's law for OR: The complement of the sum of two operands is equal to the product of the complements of the operands.
 
