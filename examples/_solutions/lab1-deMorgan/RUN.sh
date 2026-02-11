@@ -28,7 +28,7 @@
 ## Change top entity you want to simulate and GtkWave path
 ##############################################################
 
-TOP_ENTITY=morgan_tb
+TOP_ENTITY=demorgan_tb
 
 # For Windows
 # GTK=C:/APPZ/VHDL/gtkwave/bin
@@ -49,7 +49,7 @@ GTK=/usr/bin
 
 ghdl -i --std=02 --ieee=standard *.vhd &&
 	ghdl -m $TOP_ENTITY && 
-	ghdl -r $TOP_ENTITY --vcd=dump.vcd &&
+	ghdl -r $TOP_ENTITY --stop-time=800ns --vcd=dump.vcd &&
         # Modify input file dump.vcd, search (s) and replace 
 	# all occurences (g) of characters '^U'-->'X', '^-'-->'X', etc.
 #	sed -i 's/^U/X/g; s/^-/X/g; s/^H/1/g; s/^L/0/g' dump.vcd && 

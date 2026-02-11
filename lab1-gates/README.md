@@ -13,6 +13,7 @@
 * [Part 1: VHDL and Vivado](#part1)
 * [Part 2: De Morgan's laws](#part2)
 * [Optional tasks](#tasks)
+* [Questions](#questions)
 * [References](#references)
 
 ### Objectives
@@ -105,7 +106,7 @@ Digital systems are built from **logic gates**, which implement Boolean function
    * a 2-input OR gate,
    * a 2-input XOR gate,
 
-   using **concurrent signal assignments** (`<=`).
+   using **concurrent signal assignments** (`<=`). Note: *Concurrent* means that all assignments exist and operate at the same time, just like real hardware. There is **no execution order** between them.
 
    ```vhdl
    library ieee;
@@ -131,9 +132,9 @@ Digital systems are built from **logic gates**, which implement Boolean function
    end Behavioral;
    ```
 
-   > **Note:** *Concurrent* means that all assignments exist and operate at the same time, just like real hardware. There is **no execution order** between them.
+4. Create a truth table for all input combinations.
 
-4. The primary approach to testing VHDL designs involves creating a **testbench**. A testbench is essentially a separate VHDL file that stimulates the design under test (DUT) with various input values and monitors its outputs to verify correct functionality. The testbench typically includes DUT component instantiation and stimulus generation.
+5. The primary approach to testing VHDL designs involves creating a **testbench**. A testbench is essentially a separate VHDL file that stimulates the design under test (DUT) with various input values and monitors its outputs to verify correct functionality. The testbench typically includes DUT component instantiation and stimulus generation.
 
    ![testench idea](images/testbench.png)
 
@@ -189,17 +190,17 @@ Digital systems are built from **logic gates**, which implement Boolean function
    end tb;
    ```
 
-5. Use **Flow > Run Simulation > Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
+6. Use **Flow > Run Simulation > Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
 
    ![Vivado-simulation](images/vivado_simulation_crop.png)
 
-6. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+7. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
    <!--![Vivado-rtl](images/vivado_rtl.png)-->
 
    <!--![Vivado-commands](images/vivado_basic-commands_labels.png)-->
 
-7. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type some the following command(s) to the Tcl console:
+8. To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation** or type some the following command(s) to the Tcl console:
 
    ```tcl
    # Close the current simulation session
@@ -252,7 +253,7 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
    * `f_and`, `out`
    * `f_or`, `out`
 
-   Complete the `architecture`, add a new simulation source file `demorgan_tb.vhd`, and verify all three functions in Vivado simulator.
+   Complete the `architecture`, add a new simulation source file `demorgan_tb.vhd`, and verify that `f_org`, `f_and`, and `f_or` are identical for all 8 input combinations.
 
 3. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
@@ -260,7 +261,9 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 ## Optional tasks
 
-1. Choose one of the distributive laws and verify, using VHDL, that both sides of the equation represent the same logic function.
+1. Implement XOR using only AND, OR, NOT.
+
+2. Choose one of the distributive laws and verify, using VHDL, that both sides of the equation represent the same logic function.
 
    First Distributive law:
 
@@ -283,14 +286,23 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
    \end{align*}
    -->
 
-2. If you want to use online [EDA Playground](https://www.edaplayground.com) tool, you will need Google account, Facebook account, or register your account on EDA Playground. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/) to simulate logic circuits.
+3. If you want to use online [EDA Playground](https://www.edaplayground.com) tool, you will need Google account, Facebook account, or register your account on EDA Playground. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/) to simulate logic circuits.
 
-3. In addition to the professional Vivado tool, which requires significant local disk storage, other simulation tools are available, including TerosHDL and ghdl.
+4. In addition to the professional Vivado tool, which requires significant local disk storage, other simulation tools are available, including TerosHDL and ghdl.
 
    TerosHDL is an open-source tool designed to streamline FPGA development by providing a unified workflow for simulation and synthesis using VHDL. GHDL is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
 
    * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
    * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
+
+<a name="questions"></a>
+
+## Questions
+
+1. What are the two main parts of a VHDL file? What is the purpose of each?
+2. Using Boolean algebra, express XOR using only AND, OR, and NOT operators.
+3. What happens if you remove the final `wait;` statement in the testbench?
+4. What does the `'U'` value in `std_logic` represent?
 
 <a name="references"></a>
 
