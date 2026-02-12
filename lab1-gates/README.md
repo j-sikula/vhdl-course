@@ -106,12 +106,14 @@ Digital systems are built from **logic gates**, which implement Boolean function
    * a 2-input OR gate,
    * a 2-input XOR gate,
 
-   using **concurrent signal assignments** (`<=`). Note: *Concurrent* means that all assignments exist and operate at the same time, just like real hardware. There is **no execution order** between them.
+   using **concurrent signal assignments** (`<=`). Note: **Concurrent** means that all assignments exist and operate at the same time, just like real hardware. There is **no execution order** between them.
+
+   ![schema of gates](images/schematic_gates.png)
 
    ```vhdl
    library ieee;
        use ieee.std_logic_1164.all;
-
+   -----------------------------------------------
    entity gates is
        port (
            a     : in    std_logic;
@@ -121,7 +123,7 @@ Digital systems are built from **logic gates**, which implement Boolean function
            y_xor : out   std_logic
        );
    end entity gates;
-
+   -----------------------------------------------
    architecture Behavioral of gates is
        -- Declaration part, can be empty
    begin
@@ -145,18 +147,18 @@ Digital systems are built from **logic gates**, which implement Boolean function
    ```vhdl
    library ieee;
    use ieee.std_logic_1164.all;
-
+   -----------------------------------------------
    entity tb_gates is
    end tb_gates;
-
+   -----------------------------------------------
    architecture tb of tb_gates is
 
        component gates
-           port (a     : in std_logic;
-               b     : in std_logic;
-               y_and : out std_logic;
-               y_or  : out std_logic;
-               y_xor : out std_logic);
+           port (a     : in  std_logic;
+                 b     : in  std_logic;
+                 y_and : out std_logic;
+                 y_or  : out std_logic;
+                 y_xor : out std_logic);
        end component;
 
        signal a     : std_logic;
@@ -181,8 +183,7 @@ Digital systems are built from **logic gates**, which implement Boolean function
            a <= '0';
            wait for 100 ns;
 
-           -- ***EDIT*** Add stimuli here
-
+           -- TODO: Apply all input combinations
 
            wait;
        end process;
@@ -265,10 +266,11 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 4. In addition to the professional Vivado tool, which requires significant local disk storage, other simulation tools are available, including TerosHDL and ghdl.
 
-   TerosHDL is an open-source tool designed to streamline FPGA development by providing a unified workflow for simulation and synthesis using VHDL. GHDL is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
+   [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source tool designed to streamline FPGA development by providing a unified workflow for simulation and synthesis using VHDL. [GHDL](https://github.com/ghdl/ghdl) is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
 
-   * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
-   * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
+   * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows, Linux, or macOS.
+
+   * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows, Linux, or macOS.
 
 <a name="questions"></a>
 
