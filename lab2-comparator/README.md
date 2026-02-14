@@ -1,11 +1,11 @@
 # Lab 2: Binary comparator
 
-* [Part 1: Logic function minimization](#part1)
-* [Part 2: Binary comparator in VHDL language](#part2)
-* [Part 3: Assertion statements in VHDL testbench](#part3)
+* [Task 1: Logic function minimization](#task1)
+* [Task 2: Binary comparator in VHDL](#task2)
+* [Task 3: Assertion statements](#task3)
 * [Optional tasks](#tasks)
+* [Questions](#questions)
 * [References](#references)
-<!--* [Part 4: Implementing to FPGA](#part4)-->
 
 ### Objectives
 
@@ -18,11 +18,17 @@ After completing this laboratory, students will be able to:
 
 ### Background
 
+*[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps)* offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing `1`s and `0`s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.
+
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs.
 
-![Binary comparator](images/two-bit-comparator.png)
+   ![Binary comparator](images/two-bit-comparator.png)
 
-Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions but only **one output** should be HIGH at a time:
+<a name="task1"></a>
+
+## Task 1: Logic function minimization
+
+1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions but only **one output** should be HIGH at a time:
 
    - `b_gt`: Output is `1` when `b > a`
    - `b_a_eq`: Output is `1` when `b == a`
@@ -47,32 +53,21 @@ Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *
    | 14 | 1 1 | 1 0 |  | 0 |  |
    | 15 | 1 1 | 1 1 |  | 1 |  |
 
-<a name="part1"></a>
+2. According to truth table, create K-maps for all functions functions.
 
-## Part 1: Logic function minimization
+   ![2-bit comparator Karnaugh maps](images/k-maps.png)
 
-*[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps) offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing `1`s and `0`s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.*
+3. Use K-maps to create simplified SoP and PoS forms of both "greater than" functions.
 
-The K-map for the "equals" function is as follows:
+<a name="task2"></a>
 
-   ![Karnaugh map for "equals" function](images/kmap_equals.png)
-
-1. Create K-maps for other two functions.
-
-   ![Empty Karnaugh map 4x4](images/kmap_empty.png) &nbsp; &nbsp; &nbsp; &nbsp;
-   ![Empty Karnaugh map 4x4](images/kmap_empty.png)
-
-2. Use K-maps to create simplified SoP and PoS forms of both "greater than" functions.
-
-<a name="part2"></a>
-
-## Part 2: Binary comparator in VHDL language
+## Task 2: Binary comparator in VHDL
 
 1. Run Vivado and create a new project:
 
    1. Project name: `comparator`
    2. Project location: your working folder, such as `Documents`
-   3. Project type: **RTL Project** (Note, the Register-Transfer Level refers to a level of abstraction used to describe how the data is transferred and processed inside hardware.)
+   3. Project type: **RTL Project**
    4. Create a new VHDL source file: `compare_2bit`
    5. Do not add any constraints now
    6. Choose a default board: `Nexys A7-50T`
@@ -122,7 +117,7 @@ The K-map for the "equals" function is as follows:
    end architecture behavioral;
    ```
 
-3. Use **File > Add Sources... Alt+A > Add or create simulation sources** and create a new VHDL file `compare_2bit_tb` (same filename as tested entity with sufix or prefix `_tb`). Generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) Complete the stimuli process by several test cases.
+3. Use **File > Add Sources... Alt+A > Add or create simulation sources** and create a new VHDL file `compare_2bit_tb`. [Generate the testbench](https://vhdl.lapinoo.net/testbench/) file, and complete the stimuli process by several test cases.
 
    ```vhdl
    stimuli : process
@@ -138,13 +133,15 @@ The K-map for the "equals" function is as follows:
    end process;
    ```
 
-4. Modify one function and use gate-level implementation in SoP or PoS logic. Simulate it.
+4. In `architecture`, use method 2 and implement `b_gt` using minimized Boolean equation in SoP or PoS logic at gate-level. Simulate it. Compare waveform results with behavioral version.
 
-<a name="part3"></a>
+   Note that, the behavioral implementation is synthesizable and preferred in real designs because it is clearer, scalable, and less error-prone than manual Boolean equations.
 
-## Part 3: Assertion statements in VHDL testbench
+<a name="task3"></a>
 
-You can write any information to the console using the **report statement**. The basic syntax in VHDL is:
+## Task 3: Assertion statements
+
+During the simulation, you can write any information to the console using the **report statement**. The basic syntax in VHDL is:
 
    ```vhdl
    report <message_string> [severity <severity_level>];
@@ -157,14 +154,14 @@ where possible values for `severity_level` are: `note`, `warning`, `error`, `fai
    report "Stimulus process started";
    ```
 
-An **assertion statement** checks that a specified condition is true and reports an error if it is not. It can be combined with a report statement as follows:
+Assertions are part of verification methodology and allow automated checking of correctness during simulation. An **assertion statement** checks that a specified condition is true and **reports an error if it is not**. It can be combined with a report statement as follows:
 
    ```vhdl
    assert <condition>
      report <message_string> [severity <severity_level>];
    ```
 
-The message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
+Remember, the message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
 
    ```vhdl
    -------------------------------------------------
@@ -194,66 +191,30 @@ The message is displayed to the console when the condition is NOT met, therefore
    end process p_stimulus;
    ```
 
-1. In VHDL, write a testbench and verify the correct functionality of the comparator for all/selected input combinations.
-
-<!--
-<a name="part4"></a>
-
-## Part 4: Implementing to FPGA
-
-*A constraint is a rule that dictates a placement or timing restriction for the implementation. Constraints are not VHDL, and the syntax of constraints files differ between FPGA vendors.*
-
-*__Physical constraints__ limit the placement of a signal or instance within the FPGA. The most common physical constraints are pin assignments. They tell the P&R (Place & Route) tool to which physical FPGA pins the top-level entity signals shall be mapped.*
-
-*__Timing constraints__ set boundaries for the propagation time from one logic element to another. The most common timing constraint is the clock constraint. We need to specify the clock frequency so that the P&R tool knows how much time it has to work with between clock edges.*
-
-The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices.
-
-1. See [schematic](https://github.com/tomas-fryza/vhdl-examples/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches, LEDs, and RGB LEDs.
-
-   ![nexys A7 switches and leds](images/nexys-a7_leds-display.png)
-
-2. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices, it is necessary to include in your project the correct pin assignments:
-
-   1. Create a new constraints source `nexys` (XDC file).
-   2. Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
-   3. The pin assignments in the file are useful only if the pin names that appear in this file are the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`. Part of XDC file can be as follows:
-
-      ```xdc
-      ## Switches
-      set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { a[0] }];  # Sch=sw[0]
-      set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { a[1] }];  # Sch=sw[1]
-      ...
-
-      ## LEDs
-      set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { a_greater }];  # Sch=led[0]
-      ...
-      ```
-
-3. Implement your design to Nexys A7 board:
-
-   1. Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds).
-   2. Select **Open Hardware Manager**.
-   3. Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on).
-   4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`.
-   5. Test the functionality by toggling the switches and observing LEDs.
-
-      ![design flow](images/FPGA-design-flow.png)
--->
+1. In VHDL, write a testbench, test at least 5 input combinations, and use assertions for each case. The simulation is considered successful if no assertion reports severity error or failure.
 
 <a name="tasks"></a>
 
 ## Optional tasks
 
-1. Use conditional signal assignments `when/else` and extend your design to 4-bit comparator.
+1. Use conditional signal assignments `when/else` and extend comparator to 4-bit (scalability).
 
 2. Design a [*Prime number detector*](https://link.springer.com/chapter/10.1007/978-3-030-10552-5_1) that takes in values from 0 to 15.
 
    ![prime detector](images/digital-design-flow_prime.png)
 
-<!--
-3. Use onboard RGB LED and eight switches. Turn the green LED on only when exactly two of the first four switches are set to `1` and turn the red LED on when exactly three of the next four switches are set to `0`.
--->
+<a name="questions"></a>
+
+## Questions
+
+1. What is the advantage of using K-maps instead of directly writing SoP expressions?
+2. Why is using relational operators preferred over manual Boolean equations?
+
+3. Why must only one comparator output be high at a time?
+
+4. How many input combinations must be tested for a 2-bit comparator?
+
+5. Why are assertions important in digital design? What is the difference between `error` and `failure` severity?
 
 <a name="references"></a>
 
