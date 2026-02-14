@@ -10,8 +10,8 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-* [Part 1: VHDL and Vivado](#part1)
-* [Part 2: De Morgan's laws](#part2)
+* [Part 1: Introduction to VHDL](#task1)
+* [Part 2: De Morgan's laws](#task2)
 * [Optional tasks](#tasks)
 * [Questions](#questions)
 * [References](#references)
@@ -64,9 +64,9 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 [Vivado Design Suite](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html) is a comprehensive design environment developed by AMD (formerly Xilinx) for the design, analysis, and implementation of programmable logic devices, such as FPGAs (Field-Programmable Gate Arrays) and SoCs (System on Chips). It provides a set of tools and features for digital design, synthesis, simulation, and implementation of electronic systems.
 
-<a name="part1"></a>
+<a name="task1"></a>
 
-## Part 1: VHDL and Vivado
+## Task 1: Introduction to VHDL
 
 Design a circuir that implements the following logic functions:
 
@@ -162,7 +162,7 @@ The module shall have two single-bit inputs `a`, `b` and three single-bit output
 
    ![testench idea](images/testbench.png)
 
-   Navigate to **File > Add Sources... Alt+A > Add or create simulation sources** and proceed to create a new VHDL file named `gates_tb` (ensuring it has the same filename as the tested entity but sufixed or prefixed with `_tb`). This time, click **OK** to define an empty module. Subsequently, locate the newly created simulation file under **Simulation Sources > sim_1**.
+   Navigate to **File > Add Sources... Alt+A > Add or create simulation sources** and proceed to create a new VHDL file named `gates_tb` (ensuring it has the same filename as the tested entity but sufixed with `_tb`). This time, click **OK** to define an empty module. Subsequently, locate the newly created simulation file under **Simulation Sources > sim_1**.
 
    Generate the testbench file using the [online generator](https://vhdl.lapinoo.net/testbench/), then copy and paste its contents into your `gates_tb.vhd` file. Afterwards, fill in the test cases within the `stimuli` process for all input combinations.
 
@@ -237,9 +237,9 @@ The module shall have two single-bit inputs `a`, `b` and three single-bit output
 
    <!-- ![Reset simulation](images/screenshot_vivado_reset_simul.png)-->
 
-<a name="part2"></a>
+<a name="task2"></a>
 
-## Part 2: De Morgan's laws
+## Task 2: De Morgan's laws
 
 1. Propose a 3-input logic function, use De Morgan's laws, and implement the function using only NAND or NOR operators.
 
@@ -290,8 +290,11 @@ The module shall have two single-bit inputs `a`, `b` and three single-bit output
 ## Questions
 
 1. What are the two main parts of a VHDL file? What is the purpose of each?
+
 2. Using Boolean algebra, express XOR using only AND, OR, and NOT operators.
+
 3. What happens if you remove the final `wait;` statement in the testbench?
+
 4. What does the `'U'` value in `std_logic` represent?
 
 <a name="references"></a>

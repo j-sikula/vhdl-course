@@ -30,12 +30,12 @@ This repository contains VHDL examples for the bachelor-level course [*Digital E
 
 ![vhdl_course](examples/_archive/_07-display_driver/images/nexys-lab.jpg)
 
-## Installation
+## Installation(s)
 
 * Online [EDA Playground](https://edaplayground.com/) simulator (0 B)
-* [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
-* [Vivado Design Suite 2025.2](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions) (tens of GBs)
-* [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
+* [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
+* [Vivado Design Suite 2025.2](https://github.com/tomas-fryza/vhdl-examples/wiki/List-of-versions) (tens of GBs)
+* [TerosHDL](https://github.com/tomas-fryza/vhdl-examples/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
 * [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html) (several GBs)
 
 ## Components and tools
