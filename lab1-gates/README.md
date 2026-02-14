@@ -10,8 +10,8 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-* [Part 1: Introduction to VHDL](#task1)
-* [Part 2: De Morgan's laws](#task2)
+* [Task 1: Introduction to VHDL](#task1)
+* [Task 2: De Morgan's laws](#task2)
 * [Optional tasks](#tasks)
 * [Questions](#questions)
 * [References](#references)
