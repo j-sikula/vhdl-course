@@ -82,7 +82,7 @@ The module shall have two single-bit inputs `a`, `b` and three single-bit output
    - The design must be synthesizable
    - All input combinations must be verified by simulation
 
-   ![schema of gates](images/schematic_gates.png)
+      ![schema of gates](images/schematic_gates.png)
 
 1. Run Vivado and create a new project:
 
@@ -205,7 +205,9 @@ The module shall have two single-bit inputs `a`, `b` and three single-bit output
            a <= '0';
            wait for 100 ns;
 
+
            -- TODO: Apply all input combinations
+
 
            wait;
        end process;
